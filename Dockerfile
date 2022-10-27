@@ -14,7 +14,7 @@ pip3 install keystone-engine unicorn capstone ropper && \
 mkdir tools && cd tools && \
 git clone https://github.com/JonathanSalwan/ROPgadget && \
 git clone https://github.com/radare/radare2 && cd radare2 && sys/install.sh && \
-git clone https://github.com/AFLplusplus/AFLplusplus && cd AFLplusplus && make all && make install \
+git clone https://github.com/AFLplusplus/AFLplusplus && cd AFLplusplus && make all && make install && \
 gem install one_gadget
 
 RUN cd .. && git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh && \
