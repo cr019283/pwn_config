@@ -7,14 +7,13 @@ RUN PWNLIB_NOTERM=1 pwn update
 
 RUN dpkg --add-architecture i386 && \
 apt-get update && \
-apt-get install -y binutils bsdmainutils file rpm2cpio cpio zstd socat tmux build-essential jq strace ltrace curl wget ruby gcc dnsutils netcat gcc-multilib net-tools vim gdb gdb-multiarch python python3 python3-pip python3-dev libssl-dev libffi-dev git make procps libpcre3-dev libdb-dev libxt-dev libxaw7-dev python-pip libc6:i386 libncurses5:i386 libstdc++6:i386 && \
+apt-get install -y binutils bsdmainutils file rpm2cpio cpio zstd socat tmux build-essential jq strace ltrace curl wget rubygems gcc dnsutils netcat gcc-multilib net-tools vim gdb gdb-multiarch python python3 python3-pip python3-dev libssl-dev libffi-dev git make procps libpcre3-dev libdb-dev libxt-dev libxaw7-dev python-pip libc6:i386 libncurses5:i386 libstdc++6:i386 && \
 
 pip install capstone requests r2pipe && \
-pip3 install keystone-engine unicorn capstone ropper && \
+pip3 install keystone-engine unicorn capstone ropper tabulate typing-extensions && \
 mkdir tools && cd tools && \
 git clone https://github.com/JonathanSalwan/ROPgadget && \
 git clone https://github.com/radare/radare2 && cd radare2 && sys/install.sh && \
-git clone https://github.com/AFLplusplus/AFLplusplus && cd AFLplusplus && make all && make install && \
 gem install one_gadget
 
 RUN cd .. && git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh && \
